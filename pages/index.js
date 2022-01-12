@@ -1,12 +1,15 @@
 import Head from "next/head";
+import ChattingLayout from "../layouts/chattingLayout";
 
 
 export default function chat() {
     return (
         <>
-            <Head>
-            </Head>
+            <ChattingLayout>
 
+
+       
+{/* 
             <div className="main-wrapper">
                 <div className="header">
                     <div className="header-left">
@@ -1057,7 +1060,9 @@ export default function chat() {
                 </div>
             </div>
             <div className="sidebar-overlay" data-reff />
+  */}
 
+            </ChattingLayout>
         </>
     )
 }
