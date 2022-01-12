@@ -3,11 +3,8 @@ export default function videoCall() {
 
     return (
         <>
-
             <Head>
-                <title>Video Call</title>
             </Head>
-
 
             <div className="main-wrapper">
                 <div className="header">

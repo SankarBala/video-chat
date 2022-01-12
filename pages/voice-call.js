@@ -1,11 +1,9 @@
 ﻿import Head from 'next/head';
-
 export default function voiceCall() {
+
     return (
         <>
-
             <Head>
-               
             </Head>
 
             <div className="main-wrapper">
