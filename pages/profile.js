@@ -1,10 +1,10 @@
 ﻿import ChattingLayout from "../layouts/chattingLayout";
 
 export default function profile() {
+
     return (
         <>
             <ChattingLayout>
-
                 <div className="p-3">
                     <div className="row">
                         <div className="col-sm-7 col-6">

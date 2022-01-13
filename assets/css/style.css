@@ -979,6 +979,7 @@ textarea.form-control {
 -----------------------*/
 
 .page-wrapper {
+	height: 100vh;
 	left: 0;
 	margin-left: 230px;
 	padding-top: 50px;

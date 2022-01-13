@@ -8,7 +8,7 @@ export default function index() {
 
 
   useEffect(() => {
-    router.push('/messages');
+    router.push('/chat');
   }, []);
 
   return (

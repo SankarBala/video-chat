@@ -3,7 +3,7 @@ $(document).ready(function($) {
 	
 	// Variables declarations
 	var $wrapper = $('.main-wrapper');
-	var $pageWrapper = $('.page-wrapper');
+	// var $pageWrapper = $('.page-wrapper');
 	var $slimScrolls = $('.slimscroll');
 	var $sidebarOverlay = $('.sidebar-overlay');
 	
@@ -130,12 +130,12 @@ $(document).ready(function($) {
 	}
 	
 	// Page wrapper height
-	var pHeight = $(window).height();
-	$pageWrapper.css('min-height', pHeight);
-	$(window).resize(function() {
-		var prHeight = $(window).height();
-		$pageWrapper.css('min-height', prHeight);
-	});
+	// var pHeight = $(window).height();
+	// $pageWrapper.css('min-height', pHeight);
+	// $(window).resize(function() {
+	// 	var prHeight = $(window).height();
+	// 	$pageWrapper.css('min-height', prHeight);
+	// });
 	
 	// Datetimepicker
 	if($('.datetimepicker').length > 0) {
@@ -157,10 +157,10 @@ $(document).ready(function($) {
 	}
 	
 	// Mobile Menu
-	$(document).on('click', '#open_msg_box', function() {
-		$wrapper.toggleClass('open-msg-box');
-		return false;
-	});
+	// $(document).on('click', '#open_msg_box', function() {
+	// 	$wrapper.toggleClass('open-msg-box');
+	// 	return false;
+	// });
 	
 	// Lightgallery
 	if($('#lightgallery').length > 0) {

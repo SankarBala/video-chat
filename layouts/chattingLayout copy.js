@@ -1,12 +1,8 @@
 import Head from "next/head";
 import Link from 'next/link';
 
-function openMessageBox() {
-    console.log('f')
-   document.getElementsByClassName("main-wrapper")[0].classList.toggle("open-msg-box");
-}
-export default function ChattingLayout({ children }) {
 
+export default function ChattingLayout({ children }) {
     return (
         <>
             <Head>
@@ -53,10 +49,7 @@ export default function ChattingLayout({ children }) {
                             </div>
                         </li>
                         <li className="nav-item dropdown d-none d-sm-block">
-                            <a href="javascript:void(0);" id="open_msg_bo" onClick={() => openMessageBox()} className="hasnotifications nav-link">
-                                <i className="fa fa-comment-o" />
-                                <span className="badge badge-pill bg-danger float-right">8</span>
-                            </a>
+                            <a href="javascript:void(0);" id="open_msg_box" className="hasnotifications nav-link"><i className="fa fa-comment-o" /> <span className="badge badge-pill bg-danger float-right">8</span></a>
                         </li>
                         <li className="nav-item dropdown has-arrow">
                             <a href="#" className="dropdown-toggle nav-link user-link" data-toggle="dropdown">
@@ -437,6 +430,7 @@ export default function ChattingLayout({ children }) {
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                     <div id="drag_files" className="modal fade" role="dialog">
                         <div className="modal-dialog modal-lg modal-dialog-centered">
