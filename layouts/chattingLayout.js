@@ -1,7 +1,8 @@
 import Head from "next/head";
+import Link from 'next/link';
 
 
-export default function ChattingLayout() {
+export default function ChattingLayout({ children }) {
     return (
         <>
             <Head>
@@ -37,54 +38,11 @@ export default function ChattingLayout() {
                                                 </div>
                                             </a>
                                         </li>
-                                        <li className="notification-message">
-                                            <a href="activities.html">
-                                                <div className="media">
-                                                    <span className="avatar">V</span>
-                                                    <div className="media-body">
-                                                        <p className="noti-details"><span className="noti-title">Tarah Shropshire</span> changed the task name <span className="noti-title">Appointment booking with payment gateway</span></p>
-                                                        <p className="noti-time"><span className="notification-time">6 mins ago</span></p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li className="notification-message">
-                                            <a href="activities.html">
-                                                <div className="media">
-                                                    <span className="avatar">L</span>
-                                                    <div className="media-body">
-                                                        <p className="noti-details"><span className="noti-title">Misty Tison</span> added <span className="noti-title">Domenic Houston</span> and <span className="noti-title">Claire Mapes</span> to project <span className="noti-title">Doctor available module</span></p>
-                                                        <p className="noti-time"><span className="notification-time">8 mins ago</span></p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li className="notification-message">
-                                            <a href="activities.html">
-                                                <div className="media">
-                                                    <span className="avatar">G</span>
-                                                    <div className="media-body">
-                                                        <p className="noti-details"><span className="noti-title">Rolland Webber</span> completed task <span className="noti-title">Patient and Doctor video conferencing</span></p>
-                                                        <p className="noti-time"><span className="notification-time">12 mins ago</span></p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li className="notification-message">
-                                            <a href="activities.html">
-                                                <div className="media">
-                                                    <span className="avatar">V</span>
-                                                    <div className="media-body">
-                                                        <p className="noti-details"><span className="noti-title">Bernardo Galaviz</span> added new task <span className="noti-title">Private chat module</span></p>
-                                                        <p className="noti-time"><span className="notification-time">2 days ago</span></p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
+                                       
                                     </ul>
                                 </div>
                                 <div className="topnav-dropdown-footer">
-                                    <a href="activities.html">View all Notifications</a>
+                                    <Link href="/notifications">View all Notifications</Link>
                                 </div>
                             </div>
                         </li>
@@ -95,20 +53,20 @@ export default function ChattingLayout() {
                             <a href="#" className="dropdown-toggle nav-link user-link" data-toggle="dropdown">
                                 <span className="user-img"><img className="rounded-circle" src="assets/img/user.jpg" width={40} alt="Admin" />
                                     <span className="status online" /></span>
-                                <span>Admin</span>
+                                <span className="ml-2">User Name</span>
                             </a>
                             <div className="dropdown-menu">
-                                <a className="dropdown-item" href="profile.html">My Profile</a>
-                                <a className="dropdown-item" href="edit-profile.html">Edit Profile</a>
-                                <a className="dropdown-item" href="settings.html">Settings</a>
-                                <a className="dropdown-item" href="login.html">Logout</a>
+                                <Link href="/profile"><a className="dropdown-item">My Account</a></Link>
+                                <Link href="/profile-edit"><a className="dropdown-item">Edit Profile</a></Link>
+                                <Link href="/settings"><a className="dropdown-item">Settings</a></Link>
+                                <Link href="/logout"><a className="dropdown-item">Logout</a></Link>
                             </div>
                         </li>
                     </ul>
                     <div className="dropdown mobile-user-menu float-right">
                         <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="fa fa-ellipsis-v" /></a>
                         <div className="dropdown-menu dropdown-menu-right">
-                            <a className="dropdown-item" href="profile.html">My Profile</a>
+                            <a className="dropdown-item" href="profile.html">My Account</a>
                             <a className="dropdown-item" href="edit-profile.html">Edit Profile</a>
                             <a className="dropdown-item" href="settings.html">Settings</a>
                             <a className="dropdown-item" href="login.html">Logout</a>
@@ -122,31 +80,29 @@ export default function ChattingLayout() {
                                 <li>
                                     <a href="index.html"><i className="fa fa-home back-icon" /> <span>Back to Home</span></a>
                                 </li>
-                                <li className="menu-title">Chat Groups <a href="#" className="add-user-icon" data-toggle="modal" data-target="#add_group"><i className="fa fa-plus" /></a></li>
+                                <li className="menu-title">Groups <a href="#" className="add-user-icon" data-toggle="modal" data-target="#add_group"><i className="fa fa-plus" /></a></li>
                                 <li>
-                                    <a href="chat.html">#General</a>
+                                    <a href="chat.html">General</a>
+                                </li>
+                                
+                                <li className="menu-title">Chats <a href="#" className="add-user-icon" data-toggle="modal" data-target="#add_chat_user"><i className="fa fa-plus" /></a></li>
+                                <li>
+                                    <a href="chat.html"><span className="chat-avatar-sm user-img"><img src="/assets/img/user.jpg" alt className="rounded-circle" /><span className="status online" /></span> John Doe <span className="badge badge-pill bg-danger float-right">1</span></a>
                                 </li>
                                 <li>
-                                    <a href="chat.html">#Video Responsive Survey</a>
+                                    <a href="chat.html"><span className="chat-avatar-sm user-img"><img src="/assets/img/user.jpg" alt className="rounded-circle" /><span className="status offline" /></span> Richard Miles <span className="badge badge-pill bg-danger float-right">18</span></a>
                                 </li>
                                 <li>
-                                    <a href="chat.html">#500rs</a>
+                                    <a href="chat.html"><span className="chat-avatar-sm user-img"><img src="/assets/img/user.jpg" alt className="rounded-circle" /><span className="status away" /></span> John Smith</a>
                                 </li>
                                 <li>
-                                    <a href="chat.html">#warehouse</a>
-                                </li>
-                                <li className="menu-title">Direct Chats <a href="#" className="add-user-icon" data-toggle="modal" data-target="#add_chat_user"><i className="fa fa-plus" /></a></li>
-                                <li>
-                                    <a href="chat.html"><span className="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt className="rounded-circle" /><span className="status online" /></span> John Doe <span className="badge badge-pill bg-danger float-right">1</span></a>
+                                    <a href="chat.html"><span className="chat-avatar-sm user-img"><img src="/assets/img/user.jpg" alt className="rounded-circle" /><span className="status waiting" /></span> John Smith</a>
                                 </li>
                                 <li>
-                                    <a href="chat.html"><span className="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt className="rounded-circle" /><span className="status offline" /></span> Richard Miles <span className="badge badge-pill bg-danger float-right">18</span></a>
-                                </li>
-                                <li>
-                                    <a href="chat.html"><span className="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt className="rounded-circle" /><span className="status away" /></span> John Smith</a>
+                                    <a href="chat.html"><span className="chat-avatar-sm user-img"><img src="/assets/img/user.jpg" alt className="rounded-circle" /><span className="" /></span> John Smith</a>
                                 </li>
                                 <li className="active">
-                                    <a href="chat.html"><span className="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt className="rounded-circle" /><span className="status online" /></span> Jennifer <span className="badge badge-pill bg-danger float-right">108</span></a>
+                                    <a href="chat.html"><span className="chat-avatar-sm user-img"><img src="/assets/img/user.jpg" alt className="rounded-circle" /><span className="status blocked" /></span> Jennifer <span className="badge badge-pill bg-danger float-right">108</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -157,341 +113,30 @@ export default function ChattingLayout() {
                         <div className="chat-main-wrapper">
                             <div className="col-lg-9 message-view chat-view">
 
-
-
-
-                                <div className="chat-window">
-                                    <div className="fixed-header">
-                                        <div className="navbar">
-                                            <div className="user-details mr-auto">
-                                                <div className="float-left user-img m-r-10">
-                                                    <a href="profile.html" title="Jennifer Robinson"><img src="assets/img/patient-thumb-02.jpg" alt className="w-40 rounded-circle" /><span className="status online" /></a>
-                                                </div>
-                                                <div className="user-info float-left">
-                                                    <a href="profile.html"><span className="font-bold">Jennifer Robinson</span> <i className="typing-text">Typing...</i></a>
-                                                    <span className="last-seen">Last seen today at 7:50 AM</span>
-                                                </div>
-                                            </div>
-                                            <div className="search-box">
-                                                <div className="input-group input-group-sm">
-                                                    <input type="text" className="form-control" placeholder="Search" />
-                                                    <span className="input-group-append">
-                                                        <button className="btn" type="button"><i className="fa fa-search" /></button>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <ul className="nav custom-menu">
-                                                <li className="nav-item">
-                                                    <a href="#chat_sidebar" className="nav-link task-chat profile-rightbar float-right" id="task_chat"><i className="fa fa-user" /></a>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <a className="nav-link" href="voice-call.html"><i className="fa fa-phone" /></a>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <a className="nav-link" href="video-call.html"><i className="fa fa-video-camera" /></a>
-                                                </li>
-                                                <li className="nav-item dropdown dropdown-action">
-                                                    <a href className="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i className="fa fa-cog" /></a>
-                                                    <div className="dropdown-menu dropdown-menu-right">
-                                                        <a className="dropdown-item" href="javascript:void(0)">Delete Conversations</a>
-                                                        <a className="dropdown-item" href="javascript:void(0)">Settings</a>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div className="chat-contents">
-                                        <div className="chat-content-wrap">
-                                            <div className="chat-wrap-inner">
-                                                <div className="chat-box">
-                                                    <div className="chats">
-                                                        <div className="chat chat-right">
-                                                            <div className="chat-body">
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <p>Hello. What can I do for you?</p>
-                                                                        <span className="chat-time">8:30 am</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="chat-line">
-                                                            <span className="chat-date">October 8th, 2015</span>
-                                                        </div>
-                                                        <div className="chat chat-left">
-                                                            <div className="chat-avatar">
-                                                                <a href="profile.html" className="avatar">
-                                                                    <img alt="Jennifer Robinson" src="assets/img/patient-thumb-02.jpg" className="img-fluid rounded-circle" />
-                                                                </a>
-                                                            </div>
-                                                            <div className="chat-body">
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <p>I'm just looking around.</p>
-                                                                        <p>Will you tell me something about yourself? </p>
-                                                                        <span className="chat-time">8:35 am</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <p>Are you there? That time!</p>
-                                                                        <span className="chat-time">8:40 am</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="chat chat-right">
-                                                            <div className="chat-body">
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <p>Where?</p>
-                                                                        <span className="chat-time">8:35 am</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <p>OK, my name is Limingqiang. I like singing, playing basketballand so on.</p>
-                                                                        <span className="chat-time">8:42 am</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="chat chat-left">
-                                                            <div className="chat-avatar">
-                                                                <a href="profile.html" className="avatar">
-                                                                    <img alt="Jennifer Robinson" src="assets/img/patient-thumb-02.jpg" className="img-fluid rounded-circle" />
-                                                                </a>
-                                                            </div>
-                                                            <div className="chat-body">
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <p>You wait for notice.</p>
-                                                                        <span className="chat-time">8:30 am</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <p>Consectetuorem ipsum dolor sit?</p>
-                                                                        <span className="chat-time">8:50 am</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <p>OK?</p>
-                                                                        <span className="chat-time">8:55 am</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content img-content">
-                                                                        <div className="chat-img-group clearfix">
-                                                                            <p>Uploaded 3 Images</p>
-                                                                            <a className="chat-img-attach" href="#">
-                                                                                <img width={182} height={137} alt src="assets/img/placeholder.jpg" />
-                                                                                <div className="chat-placeholder">
-                                                                                    <div className="chat-img-name">placeholder.jpg</div>
-                                                                                    <div className="chat-file-desc">842 KB</div>
-                                                                                </div>
-                                                                            </a>
-                                                                            <a className="chat-img-attach" href="#">
-                                                                                <img width={182} height={137} alt src="assets/img/placeholder.jpg" />
-                                                                                <div className="chat-placeholder">
-                                                                                    <div className="chat-img-name">842 KB</div>
-                                                                                </div>
-                                                                            </a>
-                                                                            <a className="chat-img-attach" href="#">
-                                                                                <img width={182} height={137} alt src="assets/img/placeholder.jpg" />
-                                                                                <div className="chat-placeholder">
-                                                                                    <div className="chat-img-name">placeholder.jpg</div>
-                                                                                    <div className="chat-file-desc">842 KB</div>
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                        <span className="chat-time">9:00 am</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="chat chat-right">
-                                                            <div className="chat-body">
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <p>OK!</p>
-                                                                        <span className="chat-time">9:00 am</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="chat chat-left">
-                                                            <div className="chat-avatar">
-                                                                <a href="profile.html" className="avatar">
-                                                                    <img alt="Jennifer Robinson" src="assets/img/patient-thumb-02.jpg" className="img-fluid rounded-circle" />
-                                                                </a>
-                                                            </div>
-                                                            <div className="chat-body">
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <p>Uploaded 3 files</p>
-                                                                        <ul className="attach-list">
-                                                                            <li><i className="fa fa-file" /> <a href="#">example.avi</a></li>
-                                                                            <li><i className="fa fa-file" /> <a href="#">activity.psd</a></li>
-                                                                            <li><i className="fa fa-file" /> <a href="#">example.psd</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <p>Consectetuorem ipsum dolor sit?</p>
-                                                                        <span className="chat-time">8:50 am</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <p>OK?</p>
-                                                                        <span className="chat-time">8:55 am</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="chat chat-right">
-                                                            <div className="chat-body">
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content img-content">
-                                                                        <div className="chat-img-group clearfix">
-                                                                            <p>Uploaded 6 Images</p>
-                                                                            <a className="chat-img-attach" href="#">
-                                                                                <img width={182} height={137} alt src="assets/img/placeholder.jpg" />
-                                                                                <div className="chat-placeholder">
-                                                                                    <div className="chat-img-name">placeholder.jpg</div>
-                                                                                    <div className="chat-file-desc">842 KB</div>
-                                                                                </div>
-                                                                            </a>
-                                                                            <a className="chat-img-attach" href="#">
-                                                                                <img width={182} height={137} alt src="assets/img/placeholder.jpg" />
-                                                                                <div className="chat-placeholder">
-                                                                                    <div className="chat-img-name">842 KB</div>
-                                                                                </div>
-                                                                            </a>
-                                                                            <a className="chat-img-attach" href="#">
-                                                                                <img width={182} height={137} alt src="assets/img/placeholder.jpg" />
-                                                                                <div className="chat-placeholder">
-                                                                                    <div className="chat-img-name">placeholder.jpg</div>
-                                                                                    <div className="chat-file-desc">842 KB</div>
-                                                                                </div>
-                                                                            </a>
-                                                                            <a className="chat-img-attach" href="#">
-                                                                                <img width={182} height={137} alt src="assets/img/placeholder.jpg" />
-                                                                                <div className="chat-placeholder">
-                                                                                    <div className="chat-img-name">placeholder.jpg</div>
-                                                                                    <div className="chat-file-desc">842 KB</div>
-                                                                                </div>
-                                                                            </a>
-                                                                            <a className="chat-img-attach" href="#">
-                                                                                <img width={182} height={137} alt src="assets/img/placeholder.jpg" />
-                                                                                <div className="chat-placeholder">
-                                                                                    <div className="chat-img-name">placeholder.jpg</div>
-                                                                                    <div className="chat-file-desc">842 KB</div>
-                                                                                </div>
-                                                                            </a>
-                                                                            <a className="chat-img-attach" href="#">
-                                                                                <img width={182} height={137} alt src="assets/img/placeholder.jpg" />
-                                                                                <div className="chat-placeholder">
-                                                                                    <div className="chat-img-name">placeholder.jpg</div>
-                                                                                    <div className="chat-file-desc">842 KB</div>
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                        <span className="chat-time">9:00 am</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="chat chat-left">
-                                                            <div className="chat-avatar">
-                                                                <a href="profile.html" className="avatar">
-                                                                    <img alt="Jennifer Robinson" src="assets/img/patient-thumb-02.jpg" className="img-fluid rounded-circle" />
-                                                                </a>
-                                                            </div>
-                                                            <div className="chat-body">
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <ul className="attach-list">
-                                                                            <li className="pdf-file"><i className="fa fa-file-pdf-o" /> <a href="#">Document_2016.pdf</a></li>
-                                                                        </ul>
-                                                                        <span className="chat-time">9:00 am</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="chat chat-right">
-                                                            <div className="chat-body">
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <ul className="attach-list">
-                                                                            <li className="pdf-file"><i className="fa fa-file-pdf-o" /> <a href="#">Document_2016.pdf</a></li>
-                                                                        </ul>
-                                                                        <span className="chat-time">9:00 am</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="chat chat-left">
-                                                            <div className="chat-avatar">
-                                                                <a href="profile.html" className="avatar">
-                                                                    <img alt="Jennifer Robinson" src="assets/img/patient-thumb-02.jpg" className="img-fluid rounded-circle" />
-                                                                </a>
-                                                            </div>
-                                                            <div className="chat-body">
-                                                                <div className="chat-bubble">
-                                                                    <div className="chat-content">
-                                                                        <p>Typing ...</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="chat-footer">
-                                        <div className="message-bar">
-                                            <div className="message-inner">
-                                                <a className="link attach-icon" href="#" data-toggle="modal" data-target="#drag_files"><img src="assets/img/attachment.png" alt /></a>
-                                                <div className="message-area">
-                                                    <div className="input-group">
-                                                        <textarea className="form-control" placeholder="Type message..." defaultValue={""} />
-                                                        <span className="input-group-append">
-                                                            <button className="btn btn-primary" type="button"><i className="fa fa-send" /></button>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
+                                {/* Chatting window */}
+                                {children}
+                                {/* End chatting window */}
 
                             </div>
+
                             <div className="col-lg-3 message-view chat-profile-view chat-sidebar" id="chat_sidebar">
                                 <div className="chat-window video-window">
                                     <div className="fixed-header">
                                         <ul className="nav nav-tabs nav-tabs-bottom">
-                                            <li className="nav-item"><a className="nav-link" href="#calls_tab" data-toggle="tab">Calls</a></li>
-                                            <li className="nav-item"><a className="nav-link active" href="#profile_tab" data-toggle="tab">Profile</a></li>
+                                            <li className="nav-item"><a className="nav-link active" href="#calls_tab" data-toggle="tab">Calls</a></li>
+                                            <li className="nav-item"><a className="nav-link" href="#chats_tab" data-toggle="tab">Chats</a></li>
+                                            <li className="nav-item"><a className="nav-link" href="#profile_tab" data-toggle="tab">Profile</a></li>
                                         </ul>
                                     </div>
                                     <div className="tab-content chat-contents">
-                                        <div className="content-full tab-pane" id="calls_tab">
+                                        <div className="content-full tab-pane show active" id="calls_tab">
                                             <div className="chat-wrap-inner">
                                                 <div className="chat-box">
                                                     <div className="chats">
                                                         <div className="chat chat-left">
                                                             <div className="chat-avatar">
                                                                 <a href="profile.html" className="avatar">
-                                                                    <img alt="Cristina Groves" src="assets/img/doctor-thumb-03.jpg" className="img-fluid rounded-circle" />
+                                                                    <img alt="John Doe" src="assets/img/user.jpg" className="img-fluid rounded-circle" />
                                                                 </a>
                                                             </div>
                                                             <div className="chat-body">
@@ -513,13 +158,13 @@ export default function ChattingLayout() {
                                                         <div className="chat chat-left">
                                                             <div className="chat-avatar">
                                                                 <a href="profile.html" className="avatar">
-                                                                    <img alt="Jennifer Robinson" src="assets/img/patient-thumb-02.jpg" className="img-fluid rounded-circle" />
+                                                                    <img alt="John Doe" src="assets/img/user.jpg" className="img-fluid rounded-circle" />
                                                                 </a>
                                                             </div>
                                                             <div className="chat-body">
                                                                 <div className="chat-bubble">
                                                                     <div className="chat-content">
-                                                                        <span className="chat-user">Jennifer Robinson</span> <span className="chat-time">8:35 am</span>
+                                                                        <span className="chat-user">John Doe</span> <span className="chat-time">8:35 am</span>
                                                                         <div className="call-details">
                                                                             <i className="material-icons">call_end</i>
                                                                             <div className="call-info">
@@ -537,7 +182,29 @@ export default function ChattingLayout() {
                                                         <div className="chat chat-left">
                                                             <div className="chat-avatar">
                                                                 <a href="profile.html" className="avatar">
-                                                                    <img alt="Cristina Groves" src="assets/img/doctor-thumb-03.jpg" className="img-fluid rounded-circle" />
+                                                                    <img alt="John Doe" src="assets/img/user.jpg" className="img-fluid rounded-circle" />
+                                                                </a>
+                                                            </div>
+                                                            <div className="chat-body">
+                                                                <div className="chat-bubble">
+                                                                    <div className="chat-content">
+                                                                        <span className="chat-user">Richard Miles</span> <span className="chat-time">8:35 am</span>
+                                                                        <div className="call-details">
+                                                                            <i className="material-icons">phone_missed</i>
+                                                                            <div className="call-info">
+                                                                                <div className="call-user-details">
+                                                                                    <span className="call-description">You missed the call</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="chat chat-left">
+                                                            <div className="chat-avatar">
+                                                                <a href="profile.html" className="avatar">
+                                                                    <img alt="John Doe" src="assets/img/user.jpg" className="img-fluid rounded-circle" />
                                                                 </a>
                                                             </div>
                                                             <div className="chat-body">
@@ -548,7 +215,7 @@ export default function ChattingLayout() {
                                                                             <i className="material-icons">ring_volume</i>
                                                                             <div className="call-info">
                                                                                 <div className="call-user-details">
-                                                                                    <a href="#" className="call-description call-description--linked" data-qa="call_attachment_link">Calling Jennifer ...</a>
+                                                                                    <a href="#" className="call-description call-description--linked" data-qa="call_attachment_link">Calling John Smith ...</a>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -560,41 +227,145 @@ export default function ChattingLayout() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="content-full tab-pane show active" id="profile_tab">
+                                        <div className="content-full tab-pane" id="chats_tab">
+                                            <div className="chat-window">
+                                                <div className="chat-contents">
+                                                    <div className="chat-content-wrap">
+                                                        <div className="chat-wrap-inner">
+                                                            <div className="chat-box">
+                                                                <div className="chats">
+                                                                    <div className="chat chat-left">
+                                                                        <div className="chat-avatar">
+                                                                            <a href="profile.html" className="avatar">
+                                                                                <img alt="John Doe" src="assets/img/user.jpg" className="img-fluid rounded-circle" />
+                                                                            </a>
+                                                                        </div>
+                                                                        <div className="chat-body">
+                                                                            <div className="chat-bubble">
+                                                                                <div className="chat-content">
+                                                                                    <span className="chat-user">John Doe</span> <span className="chat-time">8:35 am</span>
+                                                                                    <p>I'm just looking around.</p>
+                                                                                    <p>Will you tell me something about yourself? </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="chat chat-left">
+                                                                        <div className="chat-avatar">
+                                                                            <a href="profile.html" className="avatar">
+                                                                                <img alt="John Doe" src="assets/img/user.jpg" className="img-fluid rounded-circle" />
+                                                                            </a>
+                                                                        </div>
+                                                                        <div className="chat-body">
+                                                                            <div className="chat-bubble">
+                                                                                <div className="chat-content">
+                                                                                    <span className="chat-user">John Doe</span> <span className="file-attached">attached 3 files <i className="fa fa-paperclip" /></span> <span className="chat-time">Dec 17, 2014 at 4:32am</span>
+                                                                                    <ul className="attach-list">
+                                                                                        <li><i className="fa fa-file" /> <a href="#">project_document.avi</a></li>
+                                                                                        <li><i className="fa fa-file" /> <a href="#">video_conferencing.psd</a></li>
+                                                                                        <li><i className="fa fa-file" /> <a href="#">landing_page.psd</a></li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="chat-line">
+                                                                        <span className="chat-date">January 29th, 2017</span>
+                                                                    </div>
+                                                                    <div className="chat chat-left">
+                                                                        <div className="chat-avatar">
+                                                                            <a href="profile.html" className="avatar">
+                                                                                <img alt="Jeffery Lalor" src="assets/img/user.jpg" className="img-fluid rounded-circle" />
+                                                                            </a>
+                                                                        </div>
+                                                                        <div className="chat-body">
+                                                                            <div className="chat-bubble">
+                                                                                <div className="chat-content">
+                                                                                    <span className="chat-user">Jeffery Lalor</span> <span className="file-attached">attached file <i className="fa fa-paperclip" /></span> <span className="chat-time">Yesterday at 9:16pm</span>
+                                                                                    <ul className="attach-list">
+                                                                                        <li className="pdf-file"><i className="fa fa-file-pdf-o" /> <a href="#">Document_2016.pdf</a></li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="chat chat-left">
+                                                                        <div className="chat-avatar">
+                                                                            <a href="profile.html" className="avatar">
+                                                                                <img alt="Jeffery Lalor" src="assets/img/user.jpg" className="img-fluid rounded-circle" />
+                                                                            </a>
+                                                                        </div>
+                                                                        <div className="chat-body">
+                                                                            <div className="chat-bubble">
+                                                                                <div className="chat-content">
+                                                                                    <span className="chat-user">Jeffery Lalor</span> <span className="file-attached">attached file <i className="fa fa-paperclip" /></span> <span className="chat-time">Today at 12:42pm</span>
+                                                                                    <ul className="attach-list">
+                                                                                        <li className="img-file">
+                                                                                            <div className="attach-img-download"><a href="#">avatar-1.jpg</a></div>
+                                                                                            <div className="attach-img"><img src="assets/img/user.jpg" alt /></div>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="chat-footer">
+                                                    <div className="message-bar">
+                                                        <div className="message-inner">
+                                                            <a className="link attach-icon" href="#" data-toggle="modal" data-target="#drag_files"><img src="assets/img/attachment.png" alt /></a>
+                                                            <div className="message-area">
+                                                                <div className="input-group">
+                                                                    <textarea className="form-control" placeholder="Type message..." defaultValue={""} />
+                                                                    <span className="input-group-append">
+                                                                        <button className="btn btn-primary" type="button"><i className="fa fa-send" /></button>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="content-full tab-pane" id="profile_tab">
                                             <div className="display-table">
                                                 <div className="table-row">
                                                     <div className="table-body">
                                                         <div className="table-content">
                                                             <div className="chat-profile-img">
                                                                 <div className="edit-profile-img">
-                                                                    <img src="assets/img/doctor-03.jpg" alt />
+                                                                    <img src="assets/img/user.jpg" alt />
                                                                     <span className="change-img">Change Image</span>
                                                                 </div>
-                                                                <h3 className="user-name m-t-10 mb-0">Cristina Groves</h3>
-                                                                <small className="text-muted">Gynecologist</small>
+                                                                <h3 className="user-name m-t-10 mb-0">John Doe</h3>
+                                                                <small className="text-muted">MBBS, MD</small>
                                                                 <a href="edit-profile.html" className="btn btn-primary edit-btn"><i className="fa fa-pencil" /></a>
                                                             </div>
                                                             <div className="chat-profile-info">
                                                                 <ul className="user-det-list">
                                                                     <li>
                                                                         <span>Username:</span>
-                                                                        <span className="float-right text-muted">@cristina_groves</span>
+                                                                        <span className="float-right text-muted">johndoe</span>
                                                                     </li>
                                                                     <li>
                                                                         <span>DOB:</span>
-                                                                        <span className="float-right text-muted">3rd March</span>
+                                                                        <span className="float-right text-muted">24 July</span>
                                                                     </li>
                                                                     <li>
                                                                         <span>Email:</span>
-                                                                        <span className="float-right text-muted"><a href="http://cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="4a293823393e23242b2d38253c2f390a2f322b273a262f64292527">[email&nbsp;protected]</a></span>
+                                                                        <span className="float-right text-muted"><a href="http://cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="59333631373d363c193c21383429353c773a3634">[email&nbsp;protected]</a></span>
                                                                     </li>
                                                                     <li>
                                                                         <span>Phone:</span>
-                                                                        <span className="float-right text-muted"> 770-889-6484</span>
+                                                                        <span className="float-right text-muted">9876543210</span>
                                                                     </li>
                                                                 </ul>
                                                             </div>
-                                                            <div className="transfer-files">
+                                                            <div>
                                                                 <ul className="nav nav-tabs nav-tabs-solid nav-justified mb-0">
                                                                     <li className="nav-item"><a className="nav-link active" href="#all_files" data-toggle="tab">All Files</a></li>
                                                                     <li className="nav-item"><a className="nav-link" href="#my_files" data-toggle="tab">My Files</a></li>
@@ -657,7 +428,10 @@ export default function ChattingLayout() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
+                            
+
+
                         </div>
                     </div>
                     <div id="drag_files" className="modal fade" role="dialog">
@@ -876,190 +650,11 @@ export default function ChattingLayout() {
                                             </div>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="chat.html">
-                                            <div className="list-item new-message">
-                                                <div className="list-left">
-                                                    <span className="avatar">J</span>
-                                                </div>
-                                                <div className="list-body">
-                                                    <span className="message-author">John Doe</span>
-                                                    <span className="message-time">1 Aug</span>
-                                                    <div className="clearfix" />
-                                                    <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="chat.html">
-                                            <div className="list-item">
-                                                <div className="list-left">
-                                                    <span className="avatar">T</span>
-                                                </div>
-                                                <div className="list-body">
-                                                    <span className="message-author"> Tarah Shropshire </span>
-                                                    <span className="message-time">12:28 AM</span>
-                                                    <div className="clearfix" />
-                                                    <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="chat.html">
-                                            <div className="list-item">
-                                                <div className="list-left">
-                                                    <span className="avatar">M</span>
-                                                </div>
-                                                <div className="list-body">
-                                                    <span className="message-author">Mike Litorus</span>
-                                                    <span className="message-time">12:28 AM</span>
-                                                    <div className="clearfix" />
-                                                    <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="chat.html">
-                                            <div className="list-item">
-                                                <div className="list-left">
-                                                    <span className="avatar">C</span>
-                                                </div>
-                                                <div className="list-body">
-                                                    <span className="message-author"> Catherine Manseau </span>
-                                                    <span className="message-time">12:28 AM</span>
-                                                    <div className="clearfix" />
-                                                    <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="chat.html">
-                                            <div className="list-item">
-                                                <div className="list-left">
-                                                    <span className="avatar">D</span>
-                                                </div>
-                                                <div className="list-body">
-                                                    <span className="message-author"> Domenic Houston </span>
-                                                    <span className="message-time">12:28 AM</span>
-                                                    <div className="clearfix" />
-                                                    <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="chat.html">
-                                            <div className="list-item">
-                                                <div className="list-left">
-                                                    <span className="avatar">B</span>
-                                                </div>
-                                                <div className="list-body">
-                                                    <span className="message-author"> Buster Wigton </span>
-                                                    <span className="message-time">12:28 AM</span>
-                                                    <div className="clearfix" />
-                                                    <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="chat.html">
-                                            <div className="list-item">
-                                                <div className="list-left">
-                                                    <span className="avatar">R</span>
-                                                </div>
-                                                <div className="list-body">
-                                                    <span className="message-author"> Rolland Webber </span>
-                                                    <span className="message-time">12:28 AM</span>
-                                                    <div className="clearfix" />
-                                                    <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="chat.html">
-                                            <div className="list-item">
-                                                <div className="list-left">
-                                                    <span className="avatar">C</span>
-                                                </div>
-                                                <div className="list-body">
-                                                    <span className="message-author"> Claire Mapes </span>
-                                                    <span className="message-time">12:28 AM</span>
-                                                    <div className="clearfix" />
-                                                    <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="chat.html">
-                                            <div className="list-item">
-                                                <div className="list-left">
-                                                    <span className="avatar">M</span>
-                                                </div>
-                                                <div className="list-body">
-                                                    <span className="message-author">Melita Faucher</span>
-                                                    <span className="message-time">12:28 AM</span>
-                                                    <div className="clearfix" />
-                                                    <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="chat.html">
-                                            <div className="list-item">
-                                                <div className="list-left">
-                                                    <span className="avatar">J</span>
-                                                </div>
-                                                <div className="list-body">
-                                                    <span className="message-author">Jeffery Lalor</span>
-                                                    <span className="message-time">12:28 AM</span>
-                                                    <div className="clearfix" />
-                                                    <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="chat.html">
-                                            <div className="list-item">
-                                                <div className="list-left">
-                                                    <span className="avatar">L</span>
-                                                </div>
-                                                <div className="list-body">
-                                                    <span className="message-author">Loren Gatlin</span>
-                                                    <span className="message-time">12:28 AM</span>
-                                                    <div className="clearfix" />
-                                                    <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="chat.html">
-                                            <div className="list-item">
-                                                <div className="list-left">
-                                                    <span className="avatar">T</span>
-                                                </div>
-                                                <div className="list-body">
-                                                    <span className="message-author">Tarah Shropshire</span>
-                                                    <span className="message-time">12:28 AM</span>
-                                                    <div className="clearfix" />
-                                                    <span className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
+                                   
                                 </ul>
                             </div>
                             <div className="topnav-dropdown-footer">
-                                <a href="chat.html">See all messages</a>
+                                <Link href="/messages">See all messages</Link>
                             </div>
                         </div>
                     </div>

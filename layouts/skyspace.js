@@ -3,7 +3,7 @@ import Head from "next/head";
 export default function SkySpace({ children }) {
     return (
         <>
-            <div class="skyspace">
+            <div className="skyspace">
                 {children}
             </div>
 

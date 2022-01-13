@@ -749,13 +749,19 @@ textarea.form-control {
 	width: 10px;
 }
 .status.online {
-	background-color: #55ce63;
+	background-color: #05ca0f;
 }
 .status.offline {
-	background-color: #f62d51;
+	background-color: #000000;
 }
 .status.away {
-	background-color: #faa937;
+	background-color: #888888;
+}
+.status.waiting {
+	background-color: #0096d1;
+}
+.status.blocked {
+	background-color: #ff2f2f;
 }
 
 /*-----------------

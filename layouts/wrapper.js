@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 export default function wrapper({ children }) {
     return (
@@ -8,7 +9,7 @@ export default function wrapper({ children }) {
                     <div className="header">
                         <div className="header-left">
                             <a href="index.html" className="logo">
-                                <img src="assets/img/logo.png" width={35} height={35} alt /> <span>Preclinic</span>
+                                <img src="assets/img/logo.png" width={35} height={35} alt /> <span>Video Chat</span>
                             </a>
                         </div>
                         <a id="toggle_btn" href="javascript:void(0);"><i className="fa fa-bars" /></a>
@@ -54,7 +55,7 @@ export default function wrapper({ children }) {
                                     <span>Admin</span>
                                 </a>
                                 <div className="dropdown-menu">
-                                    <a className="dropdown-item" href="profile.html">My Profile</a>
+                                    <Link className="dropdown-item" href="/profile">My Profile</Link>
                                     <a className="dropdown-item" href="edit-profile.html">Edit Profile</a>
                                     <a className="dropdown-item" href="settings.html">Settings</a>
                                     <a className="dropdown-item" href="login.html">Logout</a>
